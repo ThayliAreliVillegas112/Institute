@@ -13,14 +13,14 @@ const getId = async id => {
 
 const getInfo = async id =>{
    let school = await getSchoolById(id);
-   let dateCreated = new Date(school.school[0].created.date).toLocaleString();
-   let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
+   var dateCreated = new Date(school.school[0].created.date).toLocaleString();
+    // let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
 
-//    if (school.school[0].updated.date == null){
-//         let dateUpdated = new Date (0000,0, 0,0,0,0,0).date.toLocaleString();
-//    }else{
-//         let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
-//    }
+   if (school.school[0].updated == null){
+        var dateUpdated = "No hay fecha de actualización";
+   }else{
+        var dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
+   };
     
    document.getElementById('name').value = school.school[0].name;
    document.getElementById('street').value = school.school[0].street;
@@ -32,7 +32,13 @@ const getInfo = async id =>{
 const getInfoUpdate = async id =>{
     let school = await getSchoolById(id);
     let dateCreated = new Date(school.school[0].created.date).toLocaleString();
-    let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
+    // let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
+    if (school.school[0].updated == null){
+        var dateUpdated = "No hay fecha de actualización";
+    }else{
+        var dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
+    };
+    
 
     document.getElementById('id_update').value = id;
     document.getElementById('name_update').value = school.school[0].name;
