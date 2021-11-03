@@ -13,24 +13,32 @@ const getId = async id => {
 
 const getInfo = async id =>{
    let school = await getSchoolById(id);
-   let date = new Date (school.school[0].created.date);
-   let DateCreated = new Date(school.school[0].created.date).toLocaleString();
+   let dateCreated = new Date(school.school[0].created.date).toLocaleString();
+   let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
 
+//    if (school.school[0].updated.date == null){
+//         let dateUpdated = new Date (0000,0, 0,0,0,0,0).date.toLocaleString();
+//    }else{
+//         let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
+//    }
+    
    document.getElementById('name').value = school.school[0].name;
    document.getElementById('street').value = school.school[0].street;
-   document.getElementById('created').value = DateCreated;
-   document.getElementById('updated').value = school.school[0].updated;
+   document.getElementById('created').value = dateCreated;
+   document.getElementById('updated').value = dateUpdated;
    document.getElementById('status').value = school.school[0].status ? "Activo" : "Inactivo";
    console.log(school);
 };
 const getInfoUpdate = async id =>{
     let school = await getSchoolById(id);
+    let dateCreated = new Date(school.school[0].created.date).toLocaleString();
+    let dateUpdated = new Date(school.school[0].updated.date).toLocaleString();
 
     document.getElementById('id_update').value = id;
     document.getElementById('name_update').value = school.school[0].name;
     document.getElementById('street_update').value = school.school[0].street;
-    document.getElementById('created_update').value = school.school[0].created;
-    document.getElementById('updated_update').value = school.school[0].updated;
+    document.getElementById('created_update').value = dateCreated;
+    document.getElementById('updated_update').value = dateUpdated;
 };
 const getSchool = () => {
     $.ajax({
