@@ -54,15 +54,20 @@ const getSchool = () => {
             "</tr>")
 
         for (let i = 0; i < listSchool.length; i++) {
-            var DateCreated = new Date(listSchool[i].created.date).toLocaleString();
-            var DateUpdated = new Date(listSchool[i].updated.date).toLocaleString();
+            var dateCreated = new Date(listSchool[i].created.date).toLocaleString();
+            if (listSchool[i].updated == null){
+                var dateUpdated = "Sin registro";
+            }else{
+                var dateUpdated = new Date(listSchool[i].updated.date).toLocaleString();
+            }
+            
             table.append(
                 "<tr>" +
                 "<td>" + listSchool[i].id + "</td>" +
                 "<td>" + listSchool[i].name + "</td>" +
                 "<td>" + listSchool[i].street + "</td>" +
-                "<td>" + DateCreated+ "</td>" +
-                "<td>" + listSchool[i].updated + "</td>" +
+                "<td>" + dateCreated + "</td>" +
+                "<td>" + dateUpdated + "</td>" +
                 "<td>" + listSchool[i].status + "</td>" +
                 "<td>"+ '<button onclick="getInfo('+ listSchool[i].id +');" type="button" class="btn btn-primary text-dark" data-bs-toggle="modal" data-bs-target="#details"> Detalles</button> </td>'+
                 "<td>"+ '<button onclick="getInfoUpdate('+ listSchool[i].id +');" type="button" class="btn btn-warning text-dark" data-bs-toggle="modal" data-bs-target="#update"> Modificar</button> </td>'+
