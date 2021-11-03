@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Escuelas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <div style="margin-left: 25%; margin-top: 30px;">
+        <div class="card text-center" style="padding-top: 25px; width: 70%; background-color: #FADBD8;">
+            <div class="card-header" style="background-color: #F5B7B1;">
+                <h4>Registro de escuelas</h4>
+            </div>
+            <div class="card-body">
+                <form action="javascript:void(0);" onsubmit="registerSchool();">
+                    <div class="row">
+                        <div class="col-6">
+                            <label  class="form-label">Nombre de la escuela</label>
+                            <input type="text" class="form-control" id="name_register" aria-describedby="name_register">                            
+                        </div>
+                        <div class="col-6">
+                            <label  class="form-label">Calle</label>
+                            <input type="text" class="form-control" id="street_register" aria-describedby="street_register">
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-outline-success " style="float: right;" type="submit">Registrar</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="index.html" class="btn btn-outline-primary" role="button" style="float: right;">Regresar</a>
+                Formulario
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <script src="./school/schoolController.js"></script> <!-- El controler debe ir primero para que lo lea -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
